@@ -1,4 +1,4 @@
-# Supplier Catalog with React Native
+# Supplier and Product Catalog with React Native
 
 This is a basic CRUD for a supplier and product catalog made with React Native.
 
