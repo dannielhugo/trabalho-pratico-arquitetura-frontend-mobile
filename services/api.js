@@ -34,3 +34,26 @@ export async function editSupplier(supplierId, supplier) {
 
   return response.data;
 }
+export async function getProducts() {
+  const response = await instance.get('/products');
+
+  return response.data;
+}
+
+export async function addProduct(product) {
+  const response = await instance.post('/products', product);
+
+  return response.data;
+}
+
+export async function deleteProduct(productId) {
+  const response = await instance.delete(`/products/${productId}`);
+
+  return response.data;
+}
+
+export async function editProduct(productId, product) {
+  const response = await instance.put(`/products/${productId}`, product);
+
+  return response.data;
+}

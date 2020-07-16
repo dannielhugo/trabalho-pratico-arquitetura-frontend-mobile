@@ -1,13 +1,15 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
+import SupplierForm from '../components/SupplierForm';
+import SupplierList from '../components/SupplierList';
 import { ScrollView } from 'react-native-gesture-handler';
-import Home from '../components/Home';
 
-export default function MainView({route, navigation}) {
+export default function SuplierView({route, navigation}) {
   return (
     <View style={styles.container}>
       <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
-        <Home route={route} navigation={navigation} />
+        <SupplierForm route={route} navigation={navigation} />
+        <SupplierList route={route} navigation={navigation} />
       </ScrollView>
     </View>
   );

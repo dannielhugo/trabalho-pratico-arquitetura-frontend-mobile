@@ -1,24 +1,23 @@
 import React from 'react';
-import { editSupplier } from '../services/api';
+import { editProduct } from '../services/api';
 import { StyleSheet, KeyboardAvoidingView, Platform, View, Text } from 'react-native';
 import { TextInput, TouchableOpacity } from 'react-native-gesture-handler';
 
-export default function SupplierEditForm({ route, navigation }) {
-  const [fantasy, setFantasy] = React.useState(route.params.fantasy);
-  const [cnpj, setCnpj] = React.useState(route.params.cnpj);
-  const [companyName, setCompanyName] = React.useState(route.params.companyName);
-  const [address, setAddress] = React.useState(route.params.address);
-  const [city, setCity] = React.useState(route.params.city);
-  const [id,] = React.useState(route.params.id);
+export default function ProductEditForm({ route, navigation }) {
+  const [id, ] = React.useState(route.params.id);
+  const [productName, setProductName] = React.useState(route.params.productName);
+  const [price, setPrice] = React.useState(route.params.price);
+  const [description, setDescription] = React.useState(route.params.description);
+  const [imageUrl, setImageUrl] = React.useState(route.params.imageUrl);
 
   async function handleSubmit(event) {
     event && event.preventDefault();
 
-    const data = { id, fantasy, cnpj, companyName, address, city };
+    const data = { id, productName, price, description, imageUrl };
 
-    await editSupplier(id, data);
+    await editProduct(id, data);
 
-    navigation.navigate('Supplier');
+    navigation.navigate('Product');
   }
 
   return (
@@ -29,72 +28,58 @@ export default function SupplierEditForm({ route, navigation }) {
     >
 
       <View style={style.form}>
-        <Text style={style.label}>Fantasy Name</Text>
+        <Text style={style.label}>Product Name</Text>
         <TextInput
           style={style.input}
-          placeholder="Fantasy Name"
+          placeholder="Product Name"
           placeholderTextColor="#999"
           autoCapitalize="none"
           autoCorrect={false}
           collapsable="false"
-          value={fantasy}
-          onChangeText={(text) => setFantasy(text)}
+          value={productName}
+          onChangeText={(text) => setProductName(text)}
         />
       </View>
 
       <View style={style.form}>
-        <Text style={style.label}>CNPJ</Text>
+        <Text style={style.label}>Price</Text>
         <TextInput
           style={style.input}
-          placeholder="CNPJ"
+          placeholder="Price"
           placeholderTextColor="#999"
           autoCapitalize="none"
           autoCorrect={false}
           collapsable="false"
-          value={cnpj}
-          onChangeText={(text) => setCnpj(text)}
+          value={price}
+          onChangeText={(text) => setPrice(text)}
         />
       </View>
 
       <View style={style.form}>
-        <Text style={style.label}>Company Name</Text>
+        <Text style={style.label}>Description</Text>
         <TextInput
           style={style.input}
-          placeholder="Company Name"
+          placeholder="Description"
           placeholderTextColor="#999"
           autoCapitalize="none"
           autoCorrect={false}
           collapsable="false"
-          value={companyName}
-          onChangeText={(text) => setCompanyName(text)}
+          value={description}
+          onChangeText={(text) => setDescription(text)}
         />
       </View>
 
       <View style={style.form}>
-        <Text style={style.label}>Address</Text>
+        <Text style={style.label}>Image Url</Text>
         <TextInput
           style={style.input}
-          placeholder="Address"
+          placeholder="Image Url"
           placeholderTextColor="#999"
           autoCapitalize="none"
           autoCorrect={false}
           collapsable="false"
-          value={address}
-          onChangeText={(text) => setAddress(text)}
-        />
-      </View>
-
-      <View style={style.form}>
-        <Text style={style.label}>City</Text>
-        <TextInput
-          style={style.input}
-          placeholder="City"
-          placeholderTextColor="#999"
-          autoCapitalize="none"
-          autoCorrect={false}
-          collapsable="false"
-          value={city}
-          onChangeText={(text) => setCity(text)}
+          value={imageUrl}
+          onChangeText={(text) => setImageUrl(text)}
         />
       </View>
 
@@ -102,7 +87,7 @@ export default function SupplierEditForm({ route, navigation }) {
         onPress={handleSubmit}
         style={style.buttom}
       >
-        <Text style={style.buttonText}>Update Supplier</Text>
+        <Text style={style.buttonText}>Update Product</Text>
       </TouchableOpacity>
 
     </KeyboardAvoidingView>

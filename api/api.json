@@ -1,12 +1,28 @@
 {
   "suppliers": [
     {
-      "fantasy": "ACME Corporation",
+      "id": 1,
+      "fantasy": "ACME Corporation!",
       "cnpj": "09912301990001",
       "companyName": "ACME INC",
       "address": "Road Runner/Wile E. Coyote",
-      "city": "Warner Bros City",
-      "id": 1
+      "city": "Warner Bros City"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "productName": "Curso IONIC 6",
+      "price": 39.99,
+      "description": "Curso IONIC 6 do básico ao avançado",
+      "imageUrl": "https://i.udemycdn.com/course/240x135/1325912_2431.jpg"
+    },
+    {
+      "id": 2,
+      "productName": "Novo1",
+      "price": "1919.11",
+      "description": "Teste",
+      "imageUrl": "http://google.com"
     }
   ]
 }
